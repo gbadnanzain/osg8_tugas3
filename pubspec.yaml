@@ -70,3 +70,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  assets:
+    - images/Persita_Tangerang.png
+    - images/PSPS_Riau.jpeg
+    - images/Persita_Tangerang.png
+    - images/Babel_United.jpeg
+    - images/Jakarta_United_FC.png
