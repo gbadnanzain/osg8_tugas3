@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
           child: new Card(
               child: new Column(
             children: <Widget>[
-              new Klub(
+              new Hero(
                 tag: karakternya['nama'],
                 child: new Material(
                   child: new InkWell(
@@ -43,10 +43,12 @@ class _HomeState extends State<Home> {
                               builder: (BuildContext context) => new Detail(
                                     nama: karakternya['nama'],
                                     gambar: gambar,
+                                    riwayat: riwayat,
+
                                   ),
                             )),
                     child: new Image.asset(
-                      "img/$gambar",
+                      "images/$gambar",
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -82,7 +84,7 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: new GridView.count(
-        crossAxisCount: 2,
+        crossAxisCount: 3,
         children: daftarKlub,
       ),
     );
@@ -102,12 +104,12 @@ class Detail extends StatelessWidget {
         children: <Widget>[
           new Container(
               height: 240.0,
-              child: new Klub(
+              child: new Hero(
                 tag: nama,
                 child: new Material(
                   child: new InkWell(
                     child: new Image.asset(
-                      "img/$gambar",
+                      "images/$gambar",
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -142,26 +144,11 @@ class BagianNama extends StatelessWidget {
                   nama,
                   style: new TextStyle(fontSize: 20.0, color: Colors.blue),
                 ),
-                new Text(
-                  "$nama\@gmail.com",
-                  style: new TextStyle(fontSize: 17.0, color: Colors.grey),
-                ),
+                
               ],
             ),
           ),
-          new Row(
-            children: <Widget>[
-              new Icon(
-                Icons.star,
-                size: 30.0,
-                color: Colors.red,
-              ),
-              new Text(
-                "12",
-                style: new TextStyle(fontSize: 18.0),
-              )
-            ],
-          )
+          
         ],
       ),
     );
@@ -178,12 +165,9 @@ class BagianIcon extends StatelessWidget {
           
           new Iconteks(
             icon: Icons.message,
-            teks: "Message",
+            teks: "Riwayat",
           ),
-          new Iconteks(
-            icon: Icons.photo,
-            teks: "Photo",
-          ),
+          
         ],
       ),
     );
